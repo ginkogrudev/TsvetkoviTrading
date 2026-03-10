@@ -1,166 +1,338 @@
 <!DOCTYPE html>
 <html lang="bg" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2B Хигиена | Tsetkovi Trading</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        ggpink: '#EC4899', // Твоят розов акцент за бутони и конверсия
-                        ggdark: '#111827', // Тъмният фон за премиум усещане
-                        ggcard: '#1F2937'
-                    }
-                }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Цветкови Клийнинг — B2B Доставки без главоболие</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            vibe: {
+              white: '#FFFFFF',
+              light: '#F4F7FB',   /* Много светло сиво-синьо за фон */
+              indigo: '#3B28CC',  /* 30% Електриково Индиго - Енергия и Доверие */
+              cyan: '#00F0FF',    /* Лек акцент за модерно усещане */
+              yellow: '#FFD700',  /* 10% Кибер Жълто за бутони и конверсия */
+              ggpink: '#FF1E89'   /* Твоят агенционен розов цвят за подписа */
             }
+          },
+          boxShadow: {
+            'neon': '0 0 20px rgba(255, 215, 0, 0.4)',
+            'indigo': '0 10px 30px rgba(59, 40, 204, 0.2)',
+          }
         }
-    </script>
+      }
+    }
+  </script>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </head>
-<body class="bg-ggdark text-gray-100 font-sans antialiased">
+<body class="bg-vibe-light text-slate-800 font-sans antialiased overflow-x-hidden">
 
-    <nav class="border-b border-gray-800 bg-ggdark/90 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
-            <div class="flex items-center gap-2">
-                <span class="text-3xl">🐷</span>
-                <span class="text-xl font-bold tracking-tighter">Tsetkovi<span class="text-ggpink">Cleaning</span></span>
-            </div>
-            <a href="#quote" class="bg-ggpink hover:bg-pink-600 text-white px-6 py-2 rounded-md font-bold transition-all shadow-[0_0_15px_rgba(236,72,153,0.3)]">
-                Заяви Оферта
+  <nav class="fixed w-full bg-white/80 backdrop-blur-lg z-50 border-b border-slate-200/50 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="bg-gradient-to-br from-vibe-indigo to-blue-500 text-white p-2.5 rounded-xl font-black text-xl shadow-indigo group-hover:scale-105 transition-transform">
+          ЦК
+        </div>
+        <div class="leading-none">
+          <div class="font-black text-slate-900 text-xl tracking-tight">Цветкови</div>
+          <div class="text-[10px] text-vibe-indigo font-black uppercase tracking-widest mt-1">B2B Клийнинг</div>
+        </div>
+      </a>
+
+      <div class="hidden md:flex gap-8 font-bold text-sm text-slate-500">
+        <a href="#segments" class="hover:text-vibe-indigo transition-colors">Кого обслужваме</a>
+        <a href="#packages" class="hover:text-vibe-indigo transition-colors">Пакети</a>
+        <a href="catalog.html" class="hover:text-vibe-indigo transition-colors">Каталог 🔍</a>
+      </div>
+
+      <a href="#contact" class="bg-vibe-yellow text-slate-900 px-6 py-2.5 rounded-xl font-black hover:bg-yellow-400 transition-all shadow-neon hover:-translate-y-1">
+        Вземи Оферта ⚡
+      </a>
+    </div>
+  </nav>
+
+  <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 px-4 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 overflow-visible">
+    <div class="absolute top-20 -left-20 w-72 h-72 bg-vibe-indigo/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="md:w-1/2 z-10" data-aos="fade-right">
+      <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white border border-slate-200 text-vibe-indigo text-xs font-black uppercase tracking-wider mb-6 shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        Доставяме в Ямбол & Региона
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-6">
+        Край на драмата с <span class="text-transparent bg-clip-text bg-gradient-to-r from-vibe-indigo to-blue-500">консумативите.</span>
+      </h1>
+      
+      <p class="text-lg text-slate-600 mb-8 max-w-lg font-medium">
+        Забравете за леля Пенка, която търси веро в супермаркета. Ние зареждаме вашия хотел, ресторант или офис на автопилот. Вие се фокусирате върху бизнеса си. Ние носим тоалетната хартия.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#contact" class="bg-vibe-indigo text-white px-8 py-4 rounded-xl font-black text-lg hover:bg-blue-800 transition shadow-indigo transform hover:-translate-y-1 text-center">
+          Генерирай Оферта 🚀
+        </a>
+        <a href="catalog.html" class="bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:border-vibe-indigo transition text-center">
+          Разгледай Каталога
+        </a>
+      </div>
+    </div>
+    
+    <div class="md:w-1/2 relative z-10" data-aos="zoom-in" data-aos-delay="100">
+      <div class="absolute -inset-4 bg-gradient-to-tr from-vibe-indigo to-vibe-cyan rounded-3xl transform rotate-3 opacity-20 blur-lg"></div>
+      <img src="hero.jpg" alt="Почистване" class="relative rounded-3xl shadow-2xl object-cover h-[500px] w-full border-4 border-white" />
+      
+      <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+        <div class="text-3xl">👨🏻‍🔬</div>
+        <div>
+          <div class="font-black text-slate-900">10,000+</div>
+          <div class="text-xs text-slate-500 font-bold uppercase">Доставени ролки</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="segments" class="py-24 bg-white relative">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-black text-slate-900 mb-4">Един доставчик. Три индустрии.</h2>
+        <p class="text-slate-500 text-lg font-medium">Спестяваме ви време, нерви и средно 20% от разходите на дребно.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-vibe-light p-8 rounded-3xl border border-slate-100 hover:border-vibe-indigo hover:shadow-indigo transition-all duration-300 group" data-aos="fade-up">
+          <div class="text-5xl mb-6 transform group-hover:scale-110 transition-transform">🍽️</div>
+          <h3 class="text-2xl font-black text-slate-900 mb-3">За Ресторанти</h3>
+          <p class="text-slate-600 font-medium">Обезмаслители, препарати за съдове и санитария. Кухнята работи, хигиената е на макс.</p>
+        </div>
+
+        <div class="bg-vibe-light p-8 rounded-3xl border border-slate-100 hover:border-vibe-indigo hover:shadow-indigo transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-5xl mb-6 transform group-hover:scale-110 transition-transform">🏨</div>
+          <h3 class="text-2xl font-black text-slate-900 mb-3">За Хотели</h3>
+          <p class="text-slate-600 font-medium">От лобито до последната стая. Професионални разфасовки, които камериерките обожават.</p>
+        </div>
+
+        <div class="bg-vibe-light p-8 rounded-3xl border border-slate-100 hover:border-vibe-indigo hover:shadow-indigo transition-all duration-300 group" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-5xl mb-6 transform group-hover:scale-110 transition-transform">🏢</div>
+          <h3 class="text-2xl font-black text-slate-900 mb-3">За Офиси</h3>
+          <p class="text-slate-600 font-medium">Сапун, кърпи за ръце и ароматизатори. Автоматично зареждане. Шефът е доволен.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="packages" class="py-24 bg-vibe-indigo text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 30px 30px;"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 relative z-10">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-black mb-4">Изберете вашия абонамент</h2>
+        <p class="text-blue-200 text-lg font-medium">Без дългосрочни договори. Само резултати и чисти обекти.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 items-center">
+        <div class="bg-white/10 p-8 rounded-3xl border border-white/20 backdrop-blur-sm" data-aos="fade-up">
+          <h3 class="text-2xl font-black mb-2">Старт Офис</h3>
+          <p class="text-blue-200 text-sm mb-6 font-medium">За малки обекти и магазини</p>
+          <ul class="space-y-4 mb-8 text-sm font-bold">
+            <li class="flex items-center gap-2"><span class="text-vibe-yellow">✓</span> Базова санитария</li>
+            <li class="flex items-center gap-2"><span class="text-vibe-yellow">✓</span> Доставка веднъж месечно</li>
+          </ul>
+        </div>
+
+        <div class="bg-white text-slate-900 p-8 rounded-3xl border-4 border-vibe-yellow relative transform md:-translate-y-4 shadow-neon" data-aos="fade-up" data-aos-delay="100">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-vibe-yellow text-slate-900 px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg">
+            Бестселър 🔥
+          </div>
+          <h3 class="text-3xl font-black text-vibe-indigo mb-2">Корпоративен</h3>
+          <p class="text-slate-500 text-sm mb-6 font-bold">За ресторанти и хотели (Core пакет)</p>
+          <ul class="space-y-4 mb-8 text-sm font-black text-slate-700">
+            <li class="flex items-center gap-2"><span class="text-vibe-indigo">✓</span> Пълен набор препарати</li>
+            <li class="flex items-center gap-2"><span class="text-vibe-indigo">✓</span> Приоритетна доставка</li>
+            <li class="flex items-center gap-2"><span class="text-vibe-indigo">✓</span> Личен акаунт мениджър</li>
+            <li class="flex items-center gap-2"><span class="text-green-500">✓</span> Цени на едро (до -20%)</li>
+          </ul>
+          <a href="#contact" class="block w-full text-center bg-vibe-yellow text-slate-900 py-4 rounded-xl font-black hover:bg-yellow-400 transition hover:-translate-y-1 shadow-md">
+            Избери Пакет 🎯
+          </a>
+        </div>
+
+        <div class="bg-white/10 p-8 rounded-3xl border border-white/20 backdrop-blur-sm opacity-90" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-black mb-2 text-vibe-yellow">Мега Завод</h3>
+          <p class="text-blue-200 text-sm mb-6 font-medium">За огромни индустриални бази</p>
+          <ul class="space-y-4 mb-8 text-sm font-bold opacity-80">
+            <li class="flex items-center gap-2"><span class="text-white">✓</span> Индустриални палети</li>
+            <li class="flex items-center gap-2"><span class="text-white">✓</span> Ежеседмично зареждане</li>
+            <li class="flex items-center gap-2"><span class="text-white">✓</span> Складов контрол</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 bg-vibe-light">
+   <div class="max-w-5xl mx-auto px-4" data-aos="zoom-in">
+      <div class="grid lg:grid-cols-5 gap-8 bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-slate-200">
+        
+        <div class="lg:col-span-2 flex flex-col justify-center border-b lg:border-b-0 lg:border-r border-slate-200 pb-8 lg:pb-0 lg:pr-8">
+          <h3 class="text-3xl font-black text-slate-900 mb-4">Пишете ни директно.</h3>
+          <p class="text-slate-500 font-medium mb-8">Предпочитате чат? Отговаряме светкавично във всички платформи. Личен търговски агент е на линия.</p>
+          
+          <div class="space-y-4 mb-8">
+            <a href="https://wa.me/359888123456" target="_blank" class="flex items-center gap-4 bg-[#25D366]/10 text-[#25D366] p-4 rounded-xl font-black hover:bg-[#25D366] hover:text-white transition-all group">
+              <span class="text-2xl group-hover:scale-110 transition-transform">💬</span>
+              WhatsApp Чат
             </a>
-        </div>
-    </nav>
-
-    <section class="relative pt-24 pb-32 flex items-center min-h-[80vh]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-                Спрете да мислите за консумативи.<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-ggpink to-pink-400">Ние зареждаме бизнеса ви.</span>
-            </h1>
-            <p class="text-xl text-gray-400 max-w-3xl mx-auto mb-10">
-                Автоматизирани месечни доставки на хигиенни продукти за хотели, ресторанти и офиси. Заявете персонализирана B2B оферта за по-малко от 60 секунди.
-            </p>
-            <a href="#quote" class="inline-block bg-ggpink hover:bg-pink-600 text-white text-lg font-bold px-10 py-4 rounded-md transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(236,72,153,0.4)]">
-                Генерирай Месечна Оферта (3 клика)
+            <a href="viber://chat?number=%2B359888123456" target="_blank" class="flex items-center gap-4 bg-[#7360F2]/10 text-[#7360F2] p-4 rounded-xl font-black hover:bg-[#7360F2] hover:text-white transition-all group">
+              <span class="text-2xl group-hover:scale-110 transition-transform">💜</span>
+              Viber Чат
             </a>
-            <p class="mt-4 text-sm text-gray-500">Без ангажимент. Директно ценообразуване на едро.</p>
-        </div>
-    </section>
-
-    <section class="py-20 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-16">Специализирани решения за вашата индустрия</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-ggcard p-8 rounded-lg border border-gray-700 hover:border-ggpink transition-colors">
-                    <div class="text-4xl mb-4">🍽️</div>
-                    <h3 class="text-xl font-bold mb-3">За Ресторанти</h3>
-                    <p class="text-gray-400">Обезмаслители, препарати за съдове и санитарни консумативи в индустриални количества.</p>
-                </div>
-                <div class="bg-ggcard p-8 rounded-lg border border-gray-700 hover:border-ggpink transition-colors">
-                    <div class="text-4xl mb-4">🏨</div>
-                    <h3 class="text-xl font-bold mb-3">За Хотели</h3>
-                    <p class="text-gray-400">Цялостни решения за камериерки, пране и луксозна козметика за стаите.</p>
-                </div>
-                <div class="bg-ggcard p-8 rounded-lg border border-gray-700 hover:border-ggpink transition-colors">
-                    <div class="text-4xl mb-4">🏢</div>
-                    <h3 class="text-xl font-bold mb-3">За Офиси</h3>
-                    <p class="text-gray-400">Сапуни, кърпи за ръце и ароматизатори. Редовно зареждане без да го мислите.</p>
-                </div>
+            <div class="flex flex-col gap-2 pt-4">
+              <a href="tel:+359888123456" class="flex items-center gap-3 text-slate-700 font-black hover:text-vibe-indigo transition-colors">
+                <span>📞</span> +359 888 123 456
+              </a>
+              <a href="mailto:b2b@tsetkovi.bg" class="flex items-center gap-3 text-slate-700 font-black hover:text-vibe-indigo transition-colors">
+                <span>📧</span> b2b@tsetkovi.bg
+              </a>
             </div>
-        </div>
-    </section>
+          </div>
 
-    <section class="py-24 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-4">Стандартизирани B2B Пакети</h2>
-            <p class="text-center text-gray-400 mb-16">Гарантирани наличности. Предвидими разходи.</p>
+          <div class="flex gap-4">
+            <a href="#" class="w-12 h-12 flex items-center justify-center bg-slate-50 text-slate-600 rounded-xl hover:bg-vibe-indigo hover:text-white transition-all font-black text-xl shadow-sm border border-slate-200">FB</a>
+            <a href="#" class="w-12 h-12 flex items-center justify-center bg-slate-50 text-slate-600 rounded-xl hover:bg-gradient-to-tr from-[#FD1D1D] to-[#833AB4] hover:text-white transition-all font-black text-xl shadow-sm border border-slate-200">IG</a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-3"
+             x-data="{ 
+               loading: false, 
+               success: false,
+               form: { company: '', phone: '', productOfInterest: '' },
+               
+               init() {
+                 const urlParams = new URLSearchParams(window.location.search);
+                 if(urlParams.has('product')) {
+                   this.form.productOfInterest = 'Запитване за: ' + urlParams.get('product');
+                 }
+               },
+               submitForm() {
+                 if(this.form.company === '' || this.form.phone === '') return;
+                 this.loading = true;
+                 setTimeout(() => { this.loading = false; this.success = true; }, 1500);
+               }
+             }">
+          
+          <div x-show="!success">
+            <h2 class="text-3xl font-black text-slate-900 mb-2">Или заявете оферта тук 🤝</h2>
+            <p class="text-slate-500 mb-8 font-medium">Ние ще сметнем вашите B2B отстъпки и ще ви се обадим.</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                
-                <div class="bg-ggcard p-8 rounded-lg border border-gray-700">
-                    <h3 class="text-xl font-bold mb-2">Пакет За Офиса</h3>
-                    <p class="text-sm text-gray-400 mb-6">За малки локални клиенти и магазини</p>
-                    <ul class="space-y-3 mb-8 text-gray-300">
-                        <li>✓ Базови санитарни консумативи</li>
-                        <li>✓ Доставка веднъж месечно</li>
-                        <li>✓ Стандартна поддръжка</li>
-                    </ul>
-                    <a href="#quote" class="block w-full text-center border border-gray-600 hover:border-ggpink text-white px-4 py-2 rounded transition-colors">Избери Пакет</a>
-                </div>
+            <form @submit.prevent="submitForm" class="space-y-5">
+              
+              <div x-show="form.productOfInterest !== ''" class="bg-vibe-yellow/20 p-4 rounded-xl border border-vibe-yellow text-slate-800 font-bold flex items-center gap-3">
+                <span>🛒</span>
+                <span x-text="form.productOfInterest"></span>
+              </div>
 
-                <div class="bg-gray-800 p-8 rounded-lg border-2 border-ggpink relative transform md:-translate-y-4 shadow-2xl">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-ggpink text-white px-4 py-1 rounded-full text-sm font-bold">Най-предпочитан</div>
-                    <h3 class="text-2xl font-bold mb-2">Корпоративен Пакет</h3>
-                    <p class="text-sm text-pink-300 mb-6">За по-големи компании в окръга</p>
-                    <ul class="space-y-3 mb-8 text-gray-200">
-                        <li>✓ Пълен набор професионални препарати</li>
-                        <li>✓ Приоритетна доставка (2 пъти месечно)</li>
-                        <li>✓ Персонален акаунт мениджър</li>
-                        <li>✓ B2B отстъпки за обем</li>
-                    </ul>
-                    <a href="#quote" class="block w-full text-center bg-ggpink hover:bg-pink-600 text-white px-4 py-3 rounded font-bold transition-colors">Избери Пакет</a>
-                </div>
+              <div>
+                <label class="block text-sm font-black text-slate-700 mb-2 uppercase tracking-wide">Фирма / Обект *</label>
+                <input x-model="form.company" type="text" required class="w-full px-5 py-4 bg-slate-50 rounded-xl border border-slate-200 focus:border-vibe-indigo focus:ring-4 focus:ring-vibe-indigo/10 outline-none transition font-bold text-slate-800" placeholder="Напр. Хотел Тунджа">
+              </div>
+              
+              <div>
+                <label class="block text-sm font-black text-slate-700 mb-2 uppercase tracking-wide">Телефон *</label>
+                <input x-model="form.phone" type="tel" required class="w-full px-5 py-4 bg-slate-50 rounded-xl border border-slate-200 focus:border-vibe-indigo focus:ring-4 focus:ring-vibe-indigo/10 outline-none transition font-bold text-slate-800" placeholder="0888 123 456">
+              </div>
 
-                <div class="bg-ggcard p-8 rounded-lg border border-gray-700 opacity-90">
-                    <h3 class="text-xl font-bold mb-2">Enterprise (Плашило)</h3>
-                    <p class="text-sm text-gray-400 mb-6">За огромни обекти (казина, заводи)</p>
-                    <ul class="space-y-3 mb-8 text-gray-300">
-                        <li>✓ Индустриални количества (палети)</li>
-                        <li>✓ Ежеседмично зареждане</li>
-                        <li>✓ Обучение на персонала ви</li>
-                        <li>✓ Интеграция със складови системи</li>
-                    </ul>
-                    <a href="#quote" class="block w-full text-center border border-gray-600 hover:border-gray-400 text-white px-4 py-2 rounded transition-colors">Поискай Среща</a>
-                </div>
+              <button type="submit" :disabled="loading" class="w-full bg-vibe-indigo text-white font-black py-5 rounded-xl hover:bg-blue-800 transition shadow-indigo flex justify-center items-center gap-3 text-lg mt-4" :class="loading ? 'opacity-70 cursor-wait' : ''">
+                <span x-show="!loading">Изпрати Запитване ⚡</span>
+                <span x-show="loading" class="animate-pulse">Обработка на данните...</span>
+              </button>
+            </form>
+          </div>
 
-            </div>
-        </div>
-    </section>
-
-    <section id="quote" class="py-24 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-ggcard p-10 rounded-xl border border-gray-700 shadow-2xl">
-                <h2 class="text-3xl font-bold mb-2 text-center">Заявете Месечна Оферта</h2>
-                <p class="text-gray-400 text-center mb-8">Ще се свържем с вас до 2 часа с конкретни цени.</p>
-                
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Име на обекта / фирмата</label>
-                            <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:border-ggpink focus:ring-1 focus:ring-ggpink" placeholder="Напр. Ресторант Синчец">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-400 mb-2">Телефон за връзка</label>
-                            <input type="tel" class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:border-ggpink focus:ring-1 focus:ring-ggpink" placeholder="0888 123 456">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Тип на обекта</label>
-                        <select class="w-full bg-gray-800 border border-gray-700 rounded-md px-4 py-3 text-white focus:outline-none focus:border-ggpink focus:ring-1 focus:ring-ggpink">
-                            <option>Ресторант / Заведение</option>
-                            <option>Хотел / Къща за гости</option>
-                            <option>Офис / Търговски обект</option>
-                            <option>Индустриално производство (Завод/Фабрика)</option>
-                        </select>
-                    </div>
-                    <button type="button" class="w-full bg-ggpink hover:bg-pink-600 text-white font-bold text-lg px-4 py-4 rounded-md transition-all shadow-lg">
-                        Изпрати Запитване
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-ggdark border-t border-gray-800 py-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-            <p>&copy; 2026 Tsetkovi Trading. Всички права запазени.</p>
-            <p class="mt-4 md:mt-0 flex items-center gap-2">
-                Изградено като машина за приходи от <span class="font-bold text-gray-300">🐷 GG Solutions</span>
+          <div x-show="success" class="text-center py-10 transform transition-all h-full flex flex-col justify-center" x-cloak>
+            <div class="text-7xl mb-6">🎯</div>
+            <h3 class="text-3xl font-black text-slate-900 mb-3">Тийм Цветкови е уведомен!</h3>
+            <p class="text-slate-600 font-medium text-lg max-w-sm mx-auto">
+              Очаквайте обаждане. Вече работим по вашата оферта.
             </p>
-        </div>
-    </footer>
+          </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-900 pt-20 pb-10 border-t border-slate-800 text-slate-400">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-6">
+            <div class="bg-vibe-indigo text-white p-2 rounded-lg font-black text-lg">ЦК</div>
+            <div class="font-black text-white text-xl tracking-tight">Цветкови</div>
+          </a>
+          <p class="text-sm font-medium leading-relaxed">
+            Професионален B2B дистрибутор на хигиенни материали, препарати и консумативи за бизнеса в Ямбол и региона.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="text-white font-black uppercase tracking-widest mb-6">Бързи Връзки</h4>
+          <ul class="space-y-3 text-sm font-medium">
+            <li><a href="#segments" class="hover:text-vibe-yellow transition">Кого Обслужваме</a></li>
+            <li><a href="#packages" class="hover:text-vibe-yellow transition">Абонаментни Пакети</a></li>
+            <li><a href="catalog.html" class="hover:text-vibe-yellow transition flex items-center gap-2">Каталог <span>🔍</span></a></li>
+            <li><a href="#contact" class="hover:text-vibe-yellow transition">Заяви Оферта</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-black uppercase tracking-widest mb-6">Контакти</h4>
+          <ul class="space-y-3 text-sm font-medium">
+            <li class="flex items-center gap-2">📞 +359 888 123 456</li>
+            <li class="flex items-center gap-2">📧 b2b@tsetkovi.bg</li>
+            <li class="flex items-center gap-2">📍 гр. Ямбол, Индустриална Зона</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-white font-black uppercase tracking-widest mb-6 text-right">Инфраструктура от</h4>
+          <div class="flex justify-end">
+            <a href="#" class="inline-flex items-center gap-3 bg-[#0a0a0a] px-5 py-3 rounded-xl border border-[#222] shadow-[0_0_15px_rgba(255,30,137,0.15)] hover:border-vibe-ggpink transition-all duration-300 group">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🐷</span>
+              <span class="text-white font-black text-lg tracking-tight group-hover:text-vibe-ggpink transition-colors">GG Solutions</span>
+            </a>
+          </div>
+          <p class="text-xs text-right mt-4 opacity-50 font-medium tracking-wide">
+            High-Ticket Digital Architecture
+          </p>
+        </div>
+
+      </div>
+
+      <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-medium">
+        <p>© 2026 Tsetkovi Trading. Всички права запазени.</p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white transition">Политика за поверителност</a>
+          <a href="#" class="hover:text-white transition">Общи условия</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({ duration: 800, once: true, offset: 50 });
+  </script>
 </body>
 </html>
